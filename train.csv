@@ -1,0 +1,55 @@
+sentence,tag
+Why normalization is required in OLTP Database,1
+Why is OLTP database normalization necessary?,1
+Why is it essential to normalize an OLTP database?,1
+Normalization process may require to breaks a table to many tables,2
+Data warehouse does not have to face with data manipulation anomalies,3
+"The usual activities in data analysis are Summarizing and Querying, so the data in data warehouse must be READ ONLY, Is that true?",4
+"Which architecture of DW is correct to the below sentence. Atomic data will be stored in a normalized in a centralized data warehouse. Then the dependent data marts obtain data from the data warehouse",5
+"Which type of data category is correct to the below sentence. It comes from various operational system of the enterprise",6
+"Which type of data category is correct to the below sentence. User keeps their private spreadsheets, documents, customer profile, and sometime even departmental database",7
+"After extracting data from OLTP System, you have to prepare data for storing in DW. It requires separate places to do this. Which component of data warehouse we are talking about here",8
+Can we have dual levels of granularity in Data Warehouse?,9
+"Both of 2 approaches Bottom-Up and Top-down generate their own disadvantages. What are the steps of the practical approach which is suitable for the business?",10
+What are  the advantages of Data warehouse Top-down approach?,11
+The Federated architect of Data Warehouse requires no Data Warehouse?,12
+What are the uses of metadata in Data Warehouse?,13
+The time-Varian nature of the data in a data warehouse can,14
+What are NOT the key issues to be considered while planning for a data warehouse?,15
+"We may consider purchasing a data warehouse solution from a single vendor during the project planning stage. What are the drawbacks of this?",16
+"Companies are adopting agile development for data warehouse and business intelligence projects. What are NOT the adoptions that the methodology rests on?",17
+"In data warehouse projects the job tiles are not yet standardized as the OLTP project. Is that true?",18
+What are INCORRECT descriptions of interaction between user and data warehouse application when the implementation complete?,19
+What are the success factors in Data Warehouse project?,20
+In the Sale System what are NOT the Business Dimension?,21
+"If Product is a Business Dimension, by using information formation package, what do we formally call 'Model Name', 'Model Year', 'Category'",22
+In the Sale System what are the Key Business Metric or Facts?,23
+"One says that: By using business dimensions, what exactly users analyzing is the fact. Is this correct?",24
+"Why the requirements for a data warehouse are very nebulous?",25
+"Marketing Vice President may ask: How much did my new product generate: by month, southern division, customer age and compared to plan? What are business dimension you see here",26
+What are not correct of Data warehouse architecture?,27
+"One says that: The data warehouse system environment is an information delivery system where the user themselves will access the data warehouse repository and create their own outputs",28
+What are NOT back-end tools in Data Warehouse system?,29
+What are correct of the dimensional modeling?,30
+"One says that: By using STAR schema we can totally remove Joining operation. Is that true?",31
+"One says that: In the STAR schema, Dimensional Table is not normalized. Is this correct?",32
+"Inside fact table, the fact can be summed across all dimensions is:",33
+What kind of fact table contains no Fact?,34
+"Given a situation: In operational system using 8-position code to be the primary key of the product table, where the 2-4 used to represent the position of the product. How to create a primary key for the Product Dimension Table?",35
+What is best option to create foreign key for Fact table?,36
+What are the advantages of the star schema?,37
+"Dimension is deep and the Fact is wide. Is this correct?",38
+What are the disadvantages of MOLAP,39
+What are the advantages of ROLAP,40
+What are NOT the characteristics of the ROLAP,41
+Will we construct SQL Analysis Service’s cubes directly from Data Source?,42
+What type of service in SQL Server Business Intelligent used for ETL?,43
+What type of service in SQL Server Business Intelligent used for Analysis?,44
+What type of service in SQL Server Business Intelligent used for developing the report?,45
+"In the Sale System, the developer would like to extract [Year] from the [Order Date] to load into the Time Dimension. What kind of listed below components in SSIS may help?",46
+Which components in SSIS used for performing join operation?,47
+"In SSIS, before using Merge Join, which component must be added?",48
+Which algorithms used for cluster detection?,49
+"Which method used for discovering interesting relations between variables in large databases?",50
+"Which algorithms discover patterns where one set of items follows another specific set?",51
+What kind of data mining techniques used for representing wide range of results?,52

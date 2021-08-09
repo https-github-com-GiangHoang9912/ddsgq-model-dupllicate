@@ -1,0 +1,7 @@
+nltk==3.6.2
+sentence_transformers==2.0.0
+pytorch_transformers==1.2.0
+pandas
+fastapi==0.65.3
+uvicorn==0.14.0
+passlib==1.7.4
