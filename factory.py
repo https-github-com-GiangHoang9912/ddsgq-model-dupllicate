@@ -34,11 +34,15 @@ class Factory():
         df = pd.read_csv(source_path)
         data = df['sentence'].values.tolist()
 
-        self.data[0] += data
-        encoded = self.encode(self.data[0])
+        # self.data[0] += data
+        # encoded = self.encode(self.data[0])
 
-        box = [self.data[0],encoded]
- 
+        # box = [self.data[0],encoded]
+
+        # overwrite train.pt
+        encoded = self.encode(data)
+        box = [data,encoded]
+
         torch.save(box,destination_path)
 
     def save_encoded_sentence(self, sentences, destination_path=os.path.join(dirname,"train.pt")):
