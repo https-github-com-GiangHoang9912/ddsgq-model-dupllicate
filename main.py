@@ -9,8 +9,9 @@ confident = 0.6
 #===========================================API========================================================================
 
 import uvicorn
-from fastapi import FastAPI, File, UploadFile
+from fastapi import FastAPI, File, UploadFile, Request
 from pydantic import BaseModel
+from typing import Optional
 
 app = FastAPI()
 class Question(BaseModel):
@@ -20,8 +21,9 @@ class FilePath(BaseModel):
     path: str
 
 @app.post("/duplicate/find-duplicate")
-async def create_item(request: Question):
-    fit,response = f.find_duplicate([request.question],confident)
+async def create_item(request: Request):
+    dataRequest = await request.json()
+    fit,response = f.find_duplicate([dataRequest['question']],confident, subject=dataRequest['subject'])
     error = ""
     if response == None:
         return {
@@ -33,13 +35,19 @@ async def create_item(request: Question):
 async def train_data(file_path: FilePath):
     print(file_path.path)
     f.save_encoded(file_path.path)
-    # return "training successful...!"
+    return "training successful...!"
 
 
 @app.post("/duplicate/train-data-sentence")
 async def train_data_sentence(sentences: Question):
     print(sentences)
     f.save_encoded_sentence(sentences)
+    return "training successful...!"
+
+@app.post("/duplicate/train-data-subject")
+async def train_data_subject(request: Request):
+    dataRequest = await request.json()
+    f.save_encoded_with_subject(dataRequest)
     return "training successful...!"
 
 if __name__ == "__main__":
