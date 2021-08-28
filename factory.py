@@ -46,12 +46,15 @@ class Factory():
 
         torch.save(box,destination_path)
 
-    def save_encoded_sentence(self, sentences, destination_path=os.path.join(dirname,"train.pt")):
-        self.data[0].append(sentences.question)
-        encoded = self.encode(self.data[0])
-        box = [self.data[0],encoded]
-        
-        torch.save(box, destination_path)
+    def save_encoded_all(self, databank, destination_path=os.path.join(dirname,"train.pt")):
+        if os.path.isfile(destination_path):
+            with open(destination_path,"rb") as f:
+                data = torch.load(f,map_location=torch.device('cpu'))
+                
+                if len(data[0]) != len(databank):
+                    encoded = self.encode(databank)
+                    box = [databank, encoded]
+                    torch.save(box, destination_path)
 
     def save_encoded_with_subject(self, dataRequest):
         src = os.path.join(dirname,"train.pt")
@@ -89,7 +92,14 @@ class Factory():
             print("model path not exist !!!")
 
     def find_duplicate(self, input_data: list, confident=0.8, subject="train"):
-        self.load_encoded(path=os.path.join(dirname + "/subject/", subject + ".pt"))
+        print(subject)
+        destination_path=os.path.join(dirname,"train.pt")
+        if subject != "train":
+            destination_path = os.path.join(dirname + "/subject/", subject + ".pt")
+        self.load_encoded(path=destination_path)
+
+        print(destination_path)
+        
         if self.data is not None:
             output = self.encode(input_data)
             output = [o.expand(self.data[1][0].size()) for o in output]

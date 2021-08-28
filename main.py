@@ -38,10 +38,10 @@ async def train_data(file_path: FilePath):
     return "training successful...!"
 
 
-@app.post("/duplicate/train-data-sentence")
-async def train_data_sentence(sentences: Question):
-    print(sentences)
-    f.save_encoded_sentence(sentences)
+@app.post("/duplicate/train-all-data")
+async def train_data_all(request: Request):
+    dataRequest = await request.json()
+    f.save_encoded_all(dataRequest)
     return "training successful...!"
 
 @app.post("/duplicate/train-data-subject")
