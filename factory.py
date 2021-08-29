@@ -57,7 +57,7 @@ class Factory():
                     torch.save(box, destination_path)
 
     def save_encoded_with_subject(self, dataRequest):
-        src = os.path.join(dirname,"train.pt")
+        src = os.path.join(dirname,"base.pt")
         destination_path =  os.path.join(dirname + "/subject/", dataRequest['subject'] + ".pt")
         
         if not os.path.isfile(destination_path):
